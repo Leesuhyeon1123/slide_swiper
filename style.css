@@ -1,0 +1,82 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* itemSwiper */
+.itemSwiper {
+  width: 70%;
+}
+.itemSwiper .swiper-slide {
+  width: 100%;
+}
+.itemSwiper .swiper-slide img {
+  /* txt와 img간의 공간 생길때 없앰 : img가 inline이라서 */
+  display: block;
+  width: 100%;
+}
+.itemSwiper-txt {
+  padding: 10px;
+  background-color: aqua;
+}
+/* visualSwiper */
+.visualSwiper{
+    margin: 100px 0;
+    position: relative;
+    width: 100%;
+     /* height: 600px; */
+    /* 600/1920 = 0.3125 x 100 = 31.25 */
+    height: 31.25vw;
+    background-color: aqua;
+   
+}
+.visualSwiper img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.visualSwiper .itemSwiper-txt{
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mb_img{
+    display: none;
+}
+/* 반응형 : 반응할때 사이즈 변경하는 방법*/
+@media all and (max-width : 980px){
+    .visualSwiper .itemSwiper-txt{
+        width: 180px;
+        font-size: 15px;
+        background-color: greenyellow;
+    }
+}
+@media all and (max-width : 590px) {
+    .itemSwiper-txt{
+        padding: 20px;
+        background-color: pink;
+    }
+    .itemSwiper-txt p:first-child{
+        font-size: 13px;
+        color: #9a9a9a;
+    }
+}
+@media all and (max-width : 390px){
+    .itemSwiper-txt {
+        padding: 10px;
+    }
+    .img {
+        display: none;
+      }
+      .mb_img {
+        display: block;
+       
+      }
+    
+    .visualSwiper{
+        /* 368/390+0.943...x100 = 94.35 */
+        height: 94.35px;
+    }

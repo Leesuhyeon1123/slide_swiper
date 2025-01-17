@@ -1,0 +1,100 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+html{
+  font-size: 15px;
+}
+h1{
+  text-align: center;
+  margin: 100px 0;
+  /* html 기준 폰트 사이즈에서 곱한값*/
+  font-size: 2rem;
+}
+  h2{
+    text-align: center;
+    /* 화면 너비의 2%를 먹겠다 */
+    /* 더이상 줄지 않게 하려면 @media 따로 px 설정해야함 */
+    font-size: 2vw;
+  }
+.container {
+  position: relative;
+  margin: auto;
+  margin-top: 80px;
+  width: 50%;
+  /* 원하는 너비는 max-width로 정해주기 */
+  max-width: 650px;
+  min-width: 270px;
+  background-color: pink;
+}
+/* .card {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: violet;
+} */
+.card li {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: beige;
+}
+.card li img {
+  width: 60%;
+}
+.card-txt {
+  width: 40%;
+  background-color: brown;
+}
+.m_img{
+  display: none;
+}
+.card-txt h3 {
+  font-size: 2rem;
+}
+/* 반응형 */
+@media screen and (max-width: 768px) {
+  .card li {
+    flex-direction: column;
+  }
+  .card li img {
+    width: 100%;
+  }
+  .card-txt {
+    width: 100%;
+  }
+  html{
+    font-size: 10px;
+  }
+  h2{
+    font-size: 16px;
+  }
+  @media screen and (max-width: 656px) {
+    .card-txt {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 390px) {
+    .card-txt {
+      background-color: pink;
+    }
+  
+    .card-txt p {
+      background-color: grey;
+    }
+    .img{
+      display: none;
+    }
+    .m_img{
+      display: block;
+    }
+
+  }
+}
